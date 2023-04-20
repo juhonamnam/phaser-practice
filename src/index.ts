@@ -14,6 +14,7 @@ const app = () => {
     props: {
       className: "App",
     },
+    init: () => ref.game = start(ref.gameArea),
     children: [
       element({
         tag: "header",
@@ -34,7 +35,7 @@ const app = () => {
                   if (ref?.game) {
                     ref.game.destroy(true);
                     delete ref.game;
-                    ref.button.textContent = "Start Game";
+                    ref.button.textContent = "Restart Game";
                   } else {
                     ref.game = start(ref.gameArea);
                     ref.button.textContent = "End Game";
@@ -42,7 +43,7 @@ const app = () => {
                 },
               ],
             ],
-            children: ["Start Game"],
+            children: ["End Game"],
           }),
           element({
             tag: "div",
