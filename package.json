@@ -1,0 +1,26 @@
+{
+  "name": "phaser-practice",
+  "packageManager": "yarn@3.5.0",
+  "scripts": {
+    "start": "webpack-dev-server --open --env dev",
+    "build": "webpack"
+  },
+  "devDependencies": {
+    "@yarnpkg/sdks": "^3.0.0-rc.42"
+  },
+  "dependencies": {
+    "@babel/core": "^7.21.4",
+    "@babel/preset-env": "^7.21.4",
+    "@babel/preset-typescript": "^7.21.4",
+    "babel-loader": "^9.1.2",
+    "copy-webpack-plugin": "^11.0.0",
+    "css-loader": "^6.7.3",
+    "html-webpack-plugin": "^5.5.0",
+    "mini-css-extract-plugin": "^2.7.5",
+    "phaser": "^3.55.2",
+    "typescript": "^5.0.4",
+    "webpack": "^5.77.0",
+    "webpack-cli": "^5.0.1",
+    "webpack-dev-server": "^4.13.2"
+  }
+}
