@@ -10,8 +10,8 @@ export class MainScene extends Phaser.Scene {
 
   preload() {
     Player.preload(this);
-    this.load.image("tiles", "static/rpg_nature_tileset.png");
-    this.load.tilemapTiledJSON("map", "static/map.json");
+    this.load.image("tiles", "static/survivalGame/rpg_nature_tileset.png");
+    this.load.tilemapTiledJSON("map", "static/survivalGame/map.json");
   }
 
   create() {

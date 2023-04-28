@@ -12,8 +12,12 @@ type PlayerInputKeys = {
 
 export class Player extends Phaser.Physics.Matter.Sprite {
   static preload(scene: Phaser.Scene) {
-    scene.load.atlas(KEY, "static/female.png", "static/female_atlas.json");
-    scene.load.animation(KEY, "static/female_anim.json");
+    scene.load.atlas(
+      KEY,
+      "static/survivalGame/female.png",
+      "static/survivalGame/female_atlas.json"
+    );
+    scene.load.animation(KEY, "static/survivalGame/female_anim.json");
   }
   inputKeys = {} as PlayerInputKeys;
 
