@@ -15,7 +15,7 @@ export const start = (parent: HTMLDivElement) => {
     physics: {
       default: "matter",
       matter: {
-        debug: true,
+        debug: process.env.NODE_ENV !== "production",
         gravity: { y: 0 },
       },
     },

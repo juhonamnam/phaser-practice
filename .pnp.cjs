@@ -31,6 +31,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@babel/core", "npm:7.21.4"],\
             ["@babel/preset-env", "virtual:34146cb6f79255850d27cae93966fbe356d46f6d7edae9a74f14c95553723cb3b0cb3ca48195d54a90373c45e6459b511296300e2c4fc9aa98b022f9d610c02e#npm:7.21.4"],\
             ["@babel/preset-typescript", "virtual:34146cb6f79255850d27cae93966fbe356d46f6d7edae9a74f14c95553723cb3b0cb3ca48195d54a90373c45e6459b511296300e2c4fc9aa98b022f9d610c02e#npm:7.21.4"],\
+            ["@types/node", "npm:18.16.2"],\
             ["@yarnpkg/sdks", "npm:3.0.0-rc.42"],\
             ["babel-loader", "virtual:34146cb6f79255850d27cae93966fbe356d46f6d7edae9a74f14c95553723cb3b0cb3ca48195d54a90373c45e6459b511296300e2c4fc9aa98b022f9d610c02e#npm:9.1.2"],\
             ["copy-webpack-plugin", "virtual:34146cb6f79255850d27cae93966fbe356d46f6d7edae9a74f14c95553723cb3b0cb3ca48195d54a90373c45e6459b511296300e2c4fc9aa98b022f9d610c02e#npm:11.0.0"],\
@@ -2670,6 +2671,13 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/@types-node-npm-18.15.11-fd8ceaaffd-977b4ad047.zip/node_modules/@types/node/",\
           "packageDependencies": [\
             ["@types/node", "npm:18.15.11"]\
+          ],\
+          "linkType": "HARD"\
+        }],\
+        ["npm:18.16.2", {\
+          "packageLocation": "./.yarn/cache/@types-node-npm-18.16.2-81a2b61beb-7ad66d23b3.zip/node_modules/@types/node/",\
+          "packageDependencies": [\
+            ["@types/node", "npm:18.16.2"]\
           ],\
           "linkType": "HARD"\
         }]\
@@ -6576,6 +6584,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@babel/core", "npm:7.21.4"],\
             ["@babel/preset-env", "virtual:34146cb6f79255850d27cae93966fbe356d46f6d7edae9a74f14c95553723cb3b0cb3ca48195d54a90373c45e6459b511296300e2c4fc9aa98b022f9d610c02e#npm:7.21.4"],\
             ["@babel/preset-typescript", "virtual:34146cb6f79255850d27cae93966fbe356d46f6d7edae9a74f14c95553723cb3b0cb3ca48195d54a90373c45e6459b511296300e2c4fc9aa98b022f9d610c02e#npm:7.21.4"],\
+            ["@types/node", "npm:18.16.2"],\
             ["@yarnpkg/sdks", "npm:3.0.0-rc.42"],\
             ["babel-loader", "virtual:34146cb6f79255850d27cae93966fbe356d46f6d7edae9a74f14c95553723cb3b0cb3ca48195d54a90373c45e6459b511296300e2c4fc9aa98b022f9d610c02e#npm:9.1.2"],\
             ["copy-webpack-plugin", "virtual:34146cb6f79255850d27cae93966fbe356d46f6d7edae9a74f14c95553723cb3b0cb3ca48195d54a90373c45e6459b511296300e2c4fc9aa98b022f9d610c02e#npm:11.0.0"],\

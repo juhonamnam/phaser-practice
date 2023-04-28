@@ -1643,6 +1643,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/node@npm:^18.16.2":
+  version: 18.16.2
+  resolution: "@types/node@npm:18.16.2"
+  checksum: 7ad66d23b3b93885a9f879bff98e0196790ad35589b47a3d81b52db969ad17ee298082020296df5166c2d72d3cd6a4b9ab34d254483637d967944a4b3e6febdb
+  languageName: node
+  linkType: hard
+
 "@types/qs@npm:*":
   version: 6.9.7
   resolution: "@types/qs@npm:6.9.7"
@@ -4885,6 +4892,7 @@ __metadata:
     "@babel/core": ^7.21.4
     "@babel/preset-env": ^7.21.4
     "@babel/preset-typescript": ^7.21.4
+    "@types/node": ^18.16.2
     "@yarnpkg/sdks": ^3.0.0-rc.42
     babel-loader: ^9.1.2
     copy-webpack-plugin: ^11.0.0
