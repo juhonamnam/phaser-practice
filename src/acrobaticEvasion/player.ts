@@ -10,7 +10,7 @@ type PlayerInputKeys = {
 const SPEED = 5;
 
 export class Player extends Phaser.Physics.Arcade.Image {
-  inputKeys = {} as PlayerInputKeys;
+  inputKeys: PlayerInputKeys;
 
   static preload(scene: Phaser.Scene) {
     scene.load.image(
