@@ -1,5 +1,12 @@
 import Phaser from "phaser";
-import { CAMERA_HEIGHT, CAMERA_WIDTH } from "./constants";
+import {
+  CAMERA_HEIGHT,
+  CAMERA_WIDTH,
+  GAME_HEIGHT,
+  GAME_WIDTH,
+  GAME_X,
+  GAME_Y,
+} from "./constants";
 
 export class LoadingScene extends Phaser.Scene {
   constructor() {
@@ -12,7 +19,7 @@ export class LoadingScene extends Phaser.Scene {
 
   create() {
     this.add
-      .tileSprite(0, 0, CAMERA_WIDTH, CAMERA_HEIGHT, "background")
+      .tileSprite(GAME_X, GAME_Y, GAME_WIDTH, GAME_HEIGHT, "background")
       .setOrigin(0);
 
     this.add

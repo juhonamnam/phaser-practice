@@ -1,6 +1,6 @@
 import Phaser from "phaser";
 import { Player } from "./player";
-import { ENEMY_MISSILE_SPEED, GAME_WIDTH } from "./constants";
+import { ENEMY_MISSILE_SPEED, GAME_WIDTH, GAME_X } from "./constants";
 
 export class EnemyMissileGroup extends Phaser.Physics.Arcade.Group {
   player!: Player;
@@ -25,7 +25,7 @@ export class EnemyMissileGroup extends Phaser.Physics.Arcade.Group {
       frameQuantity: 1,
       key: "enemy-missile",
       frame: [Phaser.Math.Between(0, 4)],
-      setXY: { x: Phaser.Math.Between(0, GAME_WIDTH), y: 1 },
+      setXY: { x: Phaser.Math.Between(GAME_X, GAME_X + GAME_WIDTH), y: 1 },
     });
 
     missile.forEach((m) => {

@@ -2,12 +2,7 @@ import Phaser from "phaser";
 import { Monster } from "./monster";
 import { Player } from "./player";
 import { EnemyMissileGroup } from "./enemyMissileGroup";
-import {
-  CAMERA_HEIGHT,
-  CAMERA_WIDTH,
-  GAME_HEIGHT,
-  GAME_WIDTH,
-} from "./constants";
+import { GAME_HEIGHT, GAME_WIDTH, GAME_X, GAME_Y } from "./constants";
 
 export class RoundScene extends Phaser.Scene {
   enemyMissileGroup!: EnemyMissileGroup;
@@ -33,23 +28,21 @@ export class RoundScene extends Phaser.Scene {
 
   create() {
     this.cameras.main.setBounds(0, 0, GAME_WIDTH, GAME_HEIGHT);
-    this.physics.world.setBounds(0, 0, GAME_WIDTH, GAME_HEIGHT);
+    this.physics.world.setBounds(GAME_X, GAME_Y, GAME_WIDTH, GAME_HEIGHT);
     this.add
-      .tileSprite(
-        0,
-        0,
-        GAME_WIDTH + CAMERA_WIDTH,
-        GAME_HEIGHT + CAMERA_HEIGHT,
-        "background"
-      )
+      .tileSprite(GAME_X, GAME_Y, GAME_WIDTH, GAME_HEIGHT, "background")
       .setOrigin(0)
       .setScrollFactor(0.5, 0.5);
     this.physics.world.on("worldbounds", (body: Phaser.Physics.Arcade.Body) => {
       body.gameObject.destroy();
     });
 
-    new Monster(this, GAME_WIDTH / 2, GAME_HEIGHT / 5);
-    this.player = new Player(this, GAME_WIDTH / 2, (GAME_HEIGHT * 4) / 5);
+    new Monster(this, GAME_X + GAME_WIDTH / 2, GAME_Y + GAME_HEIGHT / 5);
+    this.player = new Player(
+      this,
+      GAME_X + GAME_WIDTH / 2,
+      GAME_Y + (GAME_HEIGHT * 4) / 5
+    );
     this.cameras.main.startFollow(this.player);
     this.enemyMissileGroup = new EnemyMissileGroup(this, this.player);
   }
