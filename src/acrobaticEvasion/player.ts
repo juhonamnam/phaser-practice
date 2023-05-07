@@ -1,4 +1,5 @@
 import Phaser from "phaser";
+import { PLAYER_SPEED } from "./constants";
 
 type PlayerInputKeys = {
   up: Phaser.Input.Keyboard.Key;
@@ -6,8 +7,6 @@ type PlayerInputKeys = {
   left: Phaser.Input.Keyboard.Key;
   right: Phaser.Input.Keyboard.Key;
 };
-
-const SPEED = 5;
 
 export class Player extends Phaser.Physics.Arcade.Image {
   inputKeys: PlayerInputKeys;
@@ -62,7 +61,7 @@ export class Player extends Phaser.Physics.Arcade.Image {
         pointer.y
       );
 
-      if (distance < SPEED) {
+      if (distance < PLAYER_SPEED) {
         this.x = pointer.x;
         this.y = pointer.y;
       } else {
@@ -73,8 +72,8 @@ export class Player extends Phaser.Physics.Arcade.Image {
           pointer.y
         );
 
-        const dx = Math.cos(angle) * SPEED;
-        const dy = Math.sin(angle) * SPEED;
+        const dx = Math.cos(angle) * PLAYER_SPEED;
+        const dy = Math.sin(angle) * PLAYER_SPEED;
 
         this.x += dx;
         this.y += dy;
@@ -86,7 +85,7 @@ export class Player extends Phaser.Physics.Arcade.Image {
       if (this.inputKeys.up.isDown) vector.y -= 1;
       if (this.inputKeys.down.isDown) vector.y += 1;
       vector.normalize();
-      vector.scale(SPEED);
+      vector.scale(PLAYER_SPEED);
       this.x += vector.x;
       this.y += vector.y;
     }

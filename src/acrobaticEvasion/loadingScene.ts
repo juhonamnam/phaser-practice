@@ -1,4 +1,5 @@
 import Phaser from "phaser";
+import { CAMERA_HEIGHT, CAMERA_WIDTH } from "./constants";
 
 export class LoadingScene extends Phaser.Scene {
   constructor() {
@@ -10,19 +11,12 @@ export class LoadingScene extends Phaser.Scene {
   }
 
   create() {
-    const { x, y, width, height } = this.cameras.main;
     this.add
-      .tileSprite(x, y, width, height, "background")
-      .setOrigin(0)
-      .setScrollFactor(0, 1);
-
-    const center = {
-      x: x + width / 2,
-      y: y + height / 2,
-    };
+      .tileSprite(0, 0, CAMERA_WIDTH, CAMERA_HEIGHT, "background")
+      .setOrigin(0);
 
     this.add
-      .text(center.x, height / 4, "Acrobatic\nEvasion")
+      .text(CAMERA_WIDTH / 2, CAMERA_HEIGHT / 4, "Acrobatic\nEvasion")
       .setFill("#fff")
       .setFontSize(50)
       .setOrigin(0.5)
@@ -30,7 +24,7 @@ export class LoadingScene extends Phaser.Scene {
       .setAlign("center");
 
     this.add
-      .text(center.x, (height * 3) / 4, "Click to start")
+      .text(CAMERA_WIDTH / 2, (CAMERA_HEIGHT * 3) / 4, "Click to start")
       .setFill("#fff")
       .setFontSize(30)
       .setOrigin(0.5)
