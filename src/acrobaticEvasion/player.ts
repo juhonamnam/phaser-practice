@@ -1,5 +1,4 @@
 import Phaser from "phaser";
-import { PLAYER_SPEED } from "./constants";
 
 type PlayerInputKeys = {
   up: Phaser.Input.Keyboard.Key;
@@ -9,8 +8,6 @@ type PlayerInputKeys = {
 };
 
 export class Player extends Phaser.Physics.Arcade.Image {
-  inputKeys: PlayerInputKeys;
-
   static preload(scene: Phaser.Scene) {
     scene.load.image(
       "PlayerDefault",
@@ -29,6 +26,11 @@ export class Player extends Phaser.Physics.Arcade.Image {
       "static/acrobaticEvasion/player-damaged.png"
     );
   }
+
+  static SPEED = 5;
+
+  inputKeys: PlayerInputKeys;
+
   constructor(scene: Phaser.Scene, x: number, y: number) {
     super(scene, x, y, "PlayerDefault");
     this.setDepth(6);
@@ -61,7 +63,7 @@ export class Player extends Phaser.Physics.Arcade.Image {
         pointer.y
       );
 
-      if (distance < PLAYER_SPEED) {
+      if (distance < Player.SPEED) {
         this.x = pointer.x;
         this.y = pointer.y;
       } else {
@@ -72,8 +74,8 @@ export class Player extends Phaser.Physics.Arcade.Image {
           pointer.y
         );
 
-        const dx = Math.cos(angle) * PLAYER_SPEED;
-        const dy = Math.sin(angle) * PLAYER_SPEED;
+        const dx = Math.cos(angle) * Player.SPEED;
+        const dy = Math.sin(angle) * Player.SPEED;
 
         this.x += dx;
         this.y += dy;
@@ -85,7 +87,7 @@ export class Player extends Phaser.Physics.Arcade.Image {
       if (this.inputKeys.up.isDown) vector.y -= 1;
       if (this.inputKeys.down.isDown) vector.y += 1;
       vector.normalize();
-      vector.scale(PLAYER_SPEED);
+      vector.scale(Player.SPEED);
       this.x += vector.x;
       this.y += vector.y;
     }

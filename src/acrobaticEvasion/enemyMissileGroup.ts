@@ -1,9 +1,8 @@
 import Phaser from "phaser";
 import { Player } from "./player";
-import { ENEMY_MISSILE_SPEED, GAME_WIDTH, GAME_X } from "./constants";
+import { GAME_WIDTH, GAME_X } from "./constants";
 
 export class EnemyMissileGroup extends Phaser.Physics.Arcade.Group {
-  player!: Player;
   static preload(scene: Phaser.Scene) {
     scene.load.spritesheet(
       "enemy-missile",
@@ -11,6 +10,10 @@ export class EnemyMissileGroup extends Phaser.Physics.Arcade.Group {
       { frameWidth: 17, frameHeight: 17 }
     );
   }
+  static RADIUS = 8.5;
+  static SPEED = 500;
+
+  player!: Player;
 
   constructor(scene: Phaser.Scene, player: Player) {
     super(scene.physics.world, scene, {
@@ -29,7 +32,8 @@ export class EnemyMissileGroup extends Phaser.Physics.Arcade.Group {
     });
 
     missile.forEach((m) => {
-      m.setVelocityY(ENEMY_MISSILE_SPEED);
+      m.setCircle(EnemyMissileGroup.RADIUS);
+      m.setVelocityY(EnemyMissileGroup.SPEED);
       (m.body as Phaser.Physics.Arcade.Body).setCollideWorldBounds(
         true,
         undefined,

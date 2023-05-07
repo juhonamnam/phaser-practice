@@ -43,8 +43,9 @@ export class RoundScene extends Phaser.Scene {
       GAME_X + GAME_WIDTH / 2,
       GAME_Y + (GAME_HEIGHT * 4) / 5
     );
-    this.cameras.main.startFollow(this.player);
     this.enemyMissileGroup = new EnemyMissileGroup(this, this.player);
+
+    this.cameras.main.startFollow(this.player);
   }
 
   frameCount = 0;
