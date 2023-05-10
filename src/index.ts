@@ -1,4 +1,5 @@
-import { start } from "./survivalGame";
+// import { start } from "./survivalGame";
+import { start } from "./acrobaticEvasion";
 import { element } from "./util";
 import "./style.css";
 
@@ -14,7 +15,7 @@ const app = () => {
     props: {
       className: "App",
     },
-    init: () => ref.game = start(ref.gameArea),
+    init: () => (ref.game = start(ref.gameArea)),
     children: [
       element({
         tag: "header",
